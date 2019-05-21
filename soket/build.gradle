@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'com.bych'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/org.rxtx/rxtxcomm
+    compile group: 'org.rxtx', name: 'rxtxcomm', version: '2.0-7pre1'
+    // https://mvnrepository.com/artifact/com.sun.jna/jna
+    compile group: 'com.sun.jna', name: 'jna', version: '3.0.9'
+
+}

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.maven.doxia:doxia-skin-model:1.7.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.doxia/doxia-skin-model/1.7.4/60bfd521b3771d26f0d05e33e560475652777caa/doxia-skin-model-1.7.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.doxia/doxia-skin-model/1.7.4/7e2d24cfe27df3d00552422c9c7b1122e7d0ceb7/doxia-skin-model-1.7.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

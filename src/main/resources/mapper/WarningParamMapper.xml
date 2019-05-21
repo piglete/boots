@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bych.dao.WarningParamMapper" >
+  <resultMap id="BaseResultMap" type="com.bych.entity.WarningParam" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="pres_upper" property="presUpper" jdbcType="DOUBLE" />
+    <result column="pres_lower" property="presLower" jdbcType="DOUBLE" />
+    <result column="voltage_upper" property="voltageUpper" jdbcType="DOUBLE" />
+    <result column="voltage_lower" property="voltageLower" jdbcType="DOUBLE" />
+    <result column="heart_time" property="heartTime" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, pres_upper, pres_lower, voltage_upper, voltage_lower, heart_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_s_warningparam
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_s_warningparam
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bych.entity.WarningParam" >
+    insert into t_s_warningparam (id, pres_upper, pres_lower, 
+      voltage_upper, voltage_lower, heart_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{presUpper,jdbcType=DOUBLE}, #{presLower,jdbcType=DOUBLE}, 
+      #{voltageUpper,jdbcType=DOUBLE}, #{voltageLower,jdbcType=DOUBLE}, #{heartTime,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bych.entity.WarningParam" >
+    insert into t_s_warningparam
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="presUpper != null" >
+        pres_upper,
+      </if>
+      <if test="presLower != null" >
+        pres_lower,
+      </if>
+      <if test="voltageUpper != null" >
+        voltage_upper,
+      </if>
+      <if test="voltageLower != null" >
+        voltage_lower,
+      </if>
+      <if test="heartTime != null" >
+        heart_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="presUpper != null" >
+        #{presUpper,jdbcType=DOUBLE},
+      </if>
+      <if test="presLower != null" >
+        #{presLower,jdbcType=DOUBLE},
+      </if>
+      <if test="voltageUpper != null" >
+        #{voltageUpper,jdbcType=DOUBLE},
+      </if>
+      <if test="voltageLower != null" >
+        #{voltageLower,jdbcType=DOUBLE},
+      </if>
+      <if test="heartTime != null" >
+        #{heartTime,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bych.entity.WarningParam" >
+    update t_s_warningparam
+    <set >
+      <if test="presUpper != null" >
+        pres_upper = #{presUpper,jdbcType=DOUBLE},
+      </if>
+      <if test="presLower != null" >
+        pres_lower = #{presLower,jdbcType=DOUBLE},
+      </if>
+      <if test="voltageUpper != null" >
+        voltage_upper = #{voltageUpper,jdbcType=DOUBLE},
+      </if>
+      <if test="voltageLower != null" >
+        voltage_lower = #{voltageLower,jdbcType=DOUBLE},
+      </if>
+      <if test="heartTime != null" >
+        heart_time = #{heartTime,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bych.entity.WarningParam" >
+    update t_s_warningparam
+    set pres_upper = #{presUpper,jdbcType=DOUBLE},
+      pres_lower = #{presLower,jdbcType=DOUBLE},
+      voltage_upper = #{voltageUpper,jdbcType=DOUBLE},
+      voltage_lower = #{voltageLower,jdbcType=DOUBLE},
+      heart_time = #{heartTime,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

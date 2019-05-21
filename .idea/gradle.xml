@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="D:/Program Files/gradle-4.6" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app_base" />
+            <option value="$PROJECT_DIR$/auth_permission" />
+            <option value="$PROJECT_DIR$/command" />
+            <option value="$PROJECT_DIR$/department" />
+            <option value="$PROJECT_DIR$/device" />
+            <option value="$PROJECT_DIR$/device_status" />
+            <option value="$PROJECT_DIR$/dictionary" />
+            <option value="$PROJECT_DIR$/employee" />
+            <option value="$PROJECT_DIR$/ezjs_generator" />
+            <option value="$PROJECT_DIR$/file_manager" />
+            <option value="$PROJECT_DIR$/generator" />
+            <option value="$PROJECT_DIR$/jun_base" />
+            <option value="$PROJECT_DIR$/log" />
+            <option value="$PROJECT_DIR$/pressure" />
+            <option value="$PROJECT_DIR$/region" />
+            <option value="$PROJECT_DIR$/soket" />
+            <option value="$PROJECT_DIR$/system_notice" />
+            <option value="$PROJECT_DIR$/user_information" />
+            <option value="$PROJECT_DIR$/warn_param" />
+            <option value="$PROJECT_DIR$/warning_record" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

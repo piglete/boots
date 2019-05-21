@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'com.bych'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'tk.mybatis', name: 'mapper', version: '3.3.2'
+
+    // https://mvnrepository.com/artifact/org.freemarker/freemarker
+    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.23'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
+    // https://mvnrepository.com/artifact/com.alibaba/druid
+    compile group: 'com.alibaba', name: 'druid', version: '1.1.10'
+    // https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin
+    compile group: 'org.apache.maven.plugins', name: 'maven-javadoc-plugin', version: '3.0.1'
+    // https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-gpg-plugin
+    compile group: 'org.apache.maven.plugins', name: 'maven-gpg-plugin', version: '1.6'
+    // https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin
+    compile group: 'org.apache.maven.plugins', name: 'maven-source-plugin', version: '3.0.1'
+
+    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.28'
+}
+
+

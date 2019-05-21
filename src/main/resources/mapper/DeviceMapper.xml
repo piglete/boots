@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bych.dao.DeviceMapper" >
+  <resultMap id="BaseResultMap" type="com.bych.entity.Device" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="telecom_number" property="telecomNumber" jdbcType="VARCHAR" />
+    <result column="sn" property="sn" jdbcType="VARCHAR" />
+    <result column="card_number" property="cardNumber" jdbcType="VARCHAR" />
+    <result column="device_type" property="deviceType" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="region_code" property="regionCode" jdbcType="VARCHAR" />
+    <result column="install_time" property="installTime" jdbcType="DATE" />
+    <result column="produce_time" property="produceTime" jdbcType="DATE" />
+    <result column="press_value" property="pressValue" jdbcType="DOUBLE" />
+    <result column="execution_status" property="executionStatus" jdbcType="CHAR" />
+    <result column="execution_time" property="executionTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, telecom_number, sn, card_number, device_type, name, address, region_code, install_time, 
+    produce_time, press_value, execution_status, execution_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_b_device
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_b_device
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bych.entity.Device" >
+    insert into t_b_device (id, telecom_number, sn, 
+      card_number, device_type, name, 
+      address, region_code, install_time, 
+      produce_time, press_value, execution_status, 
+      execution_time)
+    values (#{id,jdbcType=INTEGER}, #{telecomNumber,jdbcType=VARCHAR}, #{sn,jdbcType=VARCHAR}, 
+      #{cardNumber,jdbcType=VARCHAR}, #{deviceType,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{regionCode,jdbcType=VARCHAR}, #{installTime,jdbcType=DATE}, 
+      #{produceTime,jdbcType=DATE}, #{pressValue,jdbcType=DOUBLE}, #{executionStatus,jdbcType=CHAR}, 
+      #{executionTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bych.entity.Device" >
+    insert into t_b_device
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="telecomNumber != null" >
+        telecom_number,
+      </if>
+      <if test="sn != null" >
+        sn,
+      </if>
+      <if test="cardNumber != null" >
+        card_number,
+      </if>
+      <if test="deviceType != null" >
+        device_type,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="regionCode != null" >
+        region_code,
+      </if>
+      <if test="installTime != null" >
+        install_time,
+      </if>
+      <if test="produceTime != null" >
+        produce_time,
+      </if>
+      <if test="pressValue != null" >
+        press_value,
+      </if>
+      <if test="executionStatus != null" >
+        execution_status,
+      </if>
+      <if test="executionTime != null" >
+        execution_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="telecomNumber != null" >
+        #{telecomNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="sn != null" >
+        #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="cardNumber != null" >
+        #{cardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null" >
+        #{deviceType,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="regionCode != null" >
+        #{regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="installTime != null" >
+        #{installTime,jdbcType=DATE},
+      </if>
+      <if test="produceTime != null" >
+        #{produceTime,jdbcType=DATE},
+      </if>
+      <if test="pressValue != null" >
+        #{pressValue,jdbcType=DOUBLE},
+      </if>
+      <if test="executionStatus != null" >
+        #{executionStatus,jdbcType=CHAR},
+      </if>
+      <if test="executionTime != null" >
+        #{executionTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bych.entity.Device" >
+    update t_b_device
+    <set >
+      <if test="telecomNumber != null" >
+        telecom_number = #{telecomNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="sn != null" >
+        sn = #{sn,jdbcType=VARCHAR},
+      </if>
+      <if test="cardNumber != null" >
+        card_number = #{cardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null" >
+        device_type = #{deviceType,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="regionCode != null" >
+        region_code = #{regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="installTime != null" >
+        install_time = #{installTime,jdbcType=DATE},
+      </if>
+      <if test="produceTime != null" >
+        produce_time = #{produceTime,jdbcType=DATE},
+      </if>
+      <if test="pressValue != null" >
+        press_value = #{pressValue,jdbcType=DOUBLE},
+      </if>
+      <if test="executionStatus != null" >
+        execution_status = #{executionStatus,jdbcType=CHAR},
+      </if>
+      <if test="executionTime != null" >
+        execution_time = #{executionTime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bych.entity.Device" >
+    update t_b_device
+    set telecom_number = #{telecomNumber,jdbcType=VARCHAR},
+      sn = #{sn,jdbcType=VARCHAR},
+      card_number = #{cardNumber,jdbcType=VARCHAR},
+      device_type = #{deviceType,jdbcType=CHAR},
+      name = #{name,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      region_code = #{regionCode,jdbcType=VARCHAR},
+      install_time = #{installTime,jdbcType=DATE},
+      produce_time = #{produceTime,jdbcType=DATE},
+      press_value = #{pressValue,jdbcType=DOUBLE},
+      execution_status = #{executionStatus,jdbcType=CHAR},
+      execution_time = #{executionTime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

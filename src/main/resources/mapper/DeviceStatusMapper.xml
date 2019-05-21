@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bych.dao.DeviceStatusMapper" >
+  <resultMap id="BaseResultMap" type="com.bych.entity.DeviceStatus" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="equ_id" property="equId" jdbcType="VARCHAR" />
+    <result column="equ_sta_time" property="equStaTime" jdbcType="TIMESTAMP" />
+    <result column="equ_sta_voltage" property="equStaVoltage" jdbcType="DOUBLE" />
+    <result column="equ_sta_remaining" property="equStaRemaining" jdbcType="DOUBLE" />
+    <result column="equ_sta_singal" property="equStaSingal" jdbcType="DOUBLE" />
+    <result column="equ_sta_battery" property="equStaBattery" jdbcType="CHAR" />
+    <result column="equ_status" property="equStatus" jdbcType="CHAR" />
+    <result column="equ_sta_wireless" property="equStaWireless" jdbcType="CHAR" />
+    <result column="equ_sta_layout" property="equStaLayout" jdbcType="CHAR" />
+    <result column="equ_sta_alarm" property="equStaAlarm" jdbcType="CHAR" />
+    <result column="equ_sta_coverage" property="equStaCoverage" jdbcType="CHAR" />
+    <result column="equ_sta_noise" property="equStaNoise" jdbcType="CHAR" />
+    <result column="equ_sta_temp" property="equStaTemp" jdbcType="CHAR" />
+    <result column="equ_abnormal_voltage" property="equAbnormalVoltage" jdbcType="CHAR" />
+    <result column="equ_abnormal_press" property="equAbnormalPress" jdbcType="CHAR" />
+    <result column="equ_abnormal_heart" property="equAbnormalHeart" jdbcType="CHAR" />
+    <result column="equ_abnormal_battery" property="equAbnormalBattery" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, equ_id, equ_sta_time, equ_sta_voltage, equ_sta_remaining, equ_sta_singal, equ_sta_battery, 
+    equ_status, equ_sta_wireless, equ_sta_layout, equ_sta_alarm, equ_sta_coverage, equ_sta_noise, 
+    equ_sta_temp, equ_abnormal_voltage, equ_abnormal_press, equ_abnormal_heart, equ_abnormal_battery
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_s_device_status
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_s_device_status
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bych.entity.DeviceStatus" >
+    insert into t_s_device_status (id, equ_id, equ_sta_time, 
+      equ_sta_voltage, equ_sta_remaining, equ_sta_singal, 
+      equ_sta_battery, equ_status, equ_sta_wireless, 
+      equ_sta_layout, equ_sta_alarm, equ_sta_coverage, 
+      equ_sta_noise, equ_sta_temp, equ_abnormal_voltage, 
+      equ_abnormal_press, equ_abnormal_heart, equ_abnormal_battery
+      )
+    values (#{id,jdbcType=INTEGER}, #{equId,jdbcType=VARCHAR}, #{equStaTime,jdbcType=TIMESTAMP}, 
+      #{equStaVoltage,jdbcType=DOUBLE}, #{equStaRemaining,jdbcType=DOUBLE}, #{equStaSingal,jdbcType=DOUBLE}, 
+      #{equStaBattery,jdbcType=CHAR}, #{equStatus,jdbcType=CHAR}, #{equStaWireless,jdbcType=CHAR}, 
+      #{equStaLayout,jdbcType=CHAR}, #{equStaAlarm,jdbcType=CHAR}, #{equStaCoverage,jdbcType=CHAR}, 
+      #{equStaNoise,jdbcType=CHAR}, #{equStaTemp,jdbcType=CHAR}, #{equAbnormalVoltage,jdbcType=CHAR}, 
+      #{equAbnormalPress,jdbcType=CHAR}, #{equAbnormalHeart,jdbcType=CHAR}, #{equAbnormalBattery,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bych.entity.DeviceStatus" >
+    insert into t_s_device_status
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="equId != null" >
+        equ_id,
+      </if>
+      <if test="equStaTime != null" >
+        equ_sta_time,
+      </if>
+      <if test="equStaVoltage != null" >
+        equ_sta_voltage,
+      </if>
+      <if test="equStaRemaining != null" >
+        equ_sta_remaining,
+      </if>
+      <if test="equStaSingal != null" >
+        equ_sta_singal,
+      </if>
+      <if test="equStaBattery != null" >
+        equ_sta_battery,
+      </if>
+      <if test="equStatus != null" >
+        equ_status,
+      </if>
+      <if test="equStaWireless != null" >
+        equ_sta_wireless,
+      </if>
+      <if test="equStaLayout != null" >
+        equ_sta_layout,
+      </if>
+      <if test="equStaAlarm != null" >
+        equ_sta_alarm,
+      </if>
+      <if test="equStaCoverage != null" >
+        equ_sta_coverage,
+      </if>
+      <if test="equStaNoise != null" >
+        equ_sta_noise,
+      </if>
+      <if test="equStaTemp != null" >
+        equ_sta_temp,
+      </if>
+      <if test="equAbnormalVoltage != null" >
+        equ_abnormal_voltage,
+      </if>
+      <if test="equAbnormalPress != null" >
+        equ_abnormal_press,
+      </if>
+      <if test="equAbnormalHeart != null" >
+        equ_abnormal_heart,
+      </if>
+      <if test="equAbnormalBattery != null" >
+        equ_abnormal_battery,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="equId != null" >
+        #{equId,jdbcType=VARCHAR},
+      </if>
+      <if test="equStaTime != null" >
+        #{equStaTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="equStaVoltage != null" >
+        #{equStaVoltage,jdbcType=DOUBLE},
+      </if>
+      <if test="equStaRemaining != null" >
+        #{equStaRemaining,jdbcType=DOUBLE},
+      </if>
+      <if test="equStaSingal != null" >
+        #{equStaSingal,jdbcType=DOUBLE},
+      </if>
+      <if test="equStaBattery != null" >
+        #{equStaBattery,jdbcType=CHAR},
+      </if>
+      <if test="equStatus != null" >
+        #{equStatus,jdbcType=CHAR},
+      </if>
+      <if test="equStaWireless != null" >
+        #{equStaWireless,jdbcType=CHAR},
+      </if>
+      <if test="equStaLayout != null" >
+        #{equStaLayout,jdbcType=CHAR},
+      </if>
+      <if test="equStaAlarm != null" >
+        #{equStaAlarm,jdbcType=CHAR},
+      </if>
+      <if test="equStaCoverage != null" >
+        #{equStaCoverage,jdbcType=CHAR},
+      </if>
+      <if test="equStaNoise != null" >
+        #{equStaNoise,jdbcType=CHAR},
+      </if>
+      <if test="equStaTemp != null" >
+        #{equStaTemp,jdbcType=CHAR},
+      </if>
+      <if test="equAbnormalVoltage != null" >
+        #{equAbnormalVoltage,jdbcType=CHAR},
+      </if>
+      <if test="equAbnormalPress != null" >
+        #{equAbnormalPress,jdbcType=CHAR},
+      </if>
+      <if test="equAbnormalHeart != null" >
+        #{equAbnormalHeart,jdbcType=CHAR},
+      </if>
+      <if test="equAbnormalBattery != null" >
+        #{equAbnormalBattery,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bych.entity.DeviceStatus" >
+    update t_s_device_status
+    <set >
+      <if test="equId != null" >
+        equ_id = #{equId,jdbcType=VARCHAR},
+      </if>
+      <if test="equStaTime != null" >
+        equ_sta_time = #{equStaTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="equStaVoltage != null" >
+        equ_sta_voltage = #{equStaVoltage,jdbcType=DOUBLE},
+      </if>
+      <if test="equStaRemaining != null" >
+        equ_sta_remaining = #{equStaRemaining,jdbcType=DOUBLE},
+      </if>
+      <if test="equStaSingal != null" >
+        equ_sta_singal = #{equStaSingal,jdbcType=DOUBLE},
+      </if>
+      <if test="equStaBattery != null" >
+        equ_sta_battery = #{equStaBattery,jdbcType=CHAR},
+      </if>
+      <if test="equStatus != null" >
+        equ_status = #{equStatus,jdbcType=CHAR},
+      </if>
+      <if test="equStaWireless != null" >
+        equ_sta_wireless = #{equStaWireless,jdbcType=CHAR},
+      </if>
+      <if test="equStaLayout != null" >
+        equ_sta_layout = #{equStaLayout,jdbcType=CHAR},
+      </if>
+      <if test="equStaAlarm != null" >
+        equ_sta_alarm = #{equStaAlarm,jdbcType=CHAR},
+      </if>
+      <if test="equStaCoverage != null" >
+        equ_sta_coverage = #{equStaCoverage,jdbcType=CHAR},
+      </if>
+      <if test="equStaNoise != null" >
+        equ_sta_noise = #{equStaNoise,jdbcType=CHAR},
+      </if>
+      <if test="equStaTemp != null" >
+        equ_sta_temp = #{equStaTemp,jdbcType=CHAR},
+      </if>
+      <if test="equAbnormalVoltage != null" >
+        equ_abnormal_voltage = #{equAbnormalVoltage,jdbcType=CHAR},
+      </if>
+      <if test="equAbnormalPress != null" >
+        equ_abnormal_press = #{equAbnormalPress,jdbcType=CHAR},
+      </if>
+      <if test="equAbnormalHeart != null" >
+        equ_abnormal_heart = #{equAbnormalHeart,jdbcType=CHAR},
+      </if>
+      <if test="equAbnormalBattery != null" >
+        equ_abnormal_battery = #{equAbnormalBattery,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bych.entity.DeviceStatus" >
+    update t_s_device_status
+    set equ_id = #{equId,jdbcType=VARCHAR},
+      equ_sta_time = #{equStaTime,jdbcType=TIMESTAMP},
+      equ_sta_voltage = #{equStaVoltage,jdbcType=DOUBLE},
+      equ_sta_remaining = #{equStaRemaining,jdbcType=DOUBLE},
+      equ_sta_singal = #{equStaSingal,jdbcType=DOUBLE},
+      equ_sta_battery = #{equStaBattery,jdbcType=CHAR},
+      equ_status = #{equStatus,jdbcType=CHAR},
+      equ_sta_wireless = #{equStaWireless,jdbcType=CHAR},
+      equ_sta_layout = #{equStaLayout,jdbcType=CHAR},
+      equ_sta_alarm = #{equStaAlarm,jdbcType=CHAR},
+      equ_sta_coverage = #{equStaCoverage,jdbcType=CHAR},
+      equ_sta_noise = #{equStaNoise,jdbcType=CHAR},
+      equ_sta_temp = #{equStaTemp,jdbcType=CHAR},
+      equ_abnormal_voltage = #{equAbnormalVoltage,jdbcType=CHAR},
+      equ_abnormal_press = #{equAbnormalPress,jdbcType=CHAR},
+      equ_abnormal_heart = #{equAbnormalHeart,jdbcType=CHAR},
+      equ_abnormal_battery = #{equAbnormalBattery,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

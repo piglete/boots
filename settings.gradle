@@ -1,0 +1,27 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'boots'
+include 'generator'
+include 'soket'
+include 'app_base'
+include 'jun_base'
+include 'auth_permission'
+include 'employee'
+include 'department'
+include 'ezjs_generator'
+include 'region'
+include 'dictionary'
+include 'system_notice'
+include 'user_information'
+include 'log'
+include 'file_manager'
+include 'device'
+include 'device_status'
+include 'warn_param'
+include 'pressure'
+include 'warning_record'
+include 'command'
+
